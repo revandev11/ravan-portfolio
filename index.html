@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravan | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="Ravan Logo">
+            </a>
+            
+            <input type="checkbox" id="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="Ravan.png" alt="Ravan">
+            </div>
+            <div class="hero-text">
+                <h1>Hi,I'm <span>Ravan</span></h1>
+                <p class="subtitle">Backend Developer</p>
+                <p>Hi, I'm Ravan, an aspiring Full-Stack Developer passionate about building dynamic and functional web solutions. I have a solid foundation in Backend development using Java, where I love crafting efficient logic and structures. Currently, I am expanding my skill set into Frontend development to create engaging and intuitive user experiences. My goal is to bridge the gap between powerful backend logic and clean frontend design. I'm always eager to learn new technologies, tackle challenging projects, and continuously grow as a developer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">Java</div>
+            <div class="skill">Spring Security</div>
+            <div class="skill">Spring Boot</div>
+            <div class="skill">Hibernate</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">PostgreSQL</div>
+            <div class="skill">RESTful APIs</div>
+            <div class="skill">Docker</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git & GitHub</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Flappy Bird</h3>
+                    <p>A simple implementation of the popular Flappy Bird game</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/revandev11/Flappy-Bird" target="_blank" class="card-btn">View on GitHub →</a>
+                </div>
+            </div>
+
+             <div class="card">
+                <div class="card-content">
+                    <h3>Film_khana</h3>
+                    <p>Modern film review website with user ratings and comments</p>
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                         <span class="tag">Spring Security</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <a href="https://github.com/revandev11/Film_khana" target="_blank" class="card-btn">View on GitHub →</a>
+                </div>
+            </div>
+            
+
+            <div class="card">
+                <div class="card-content">
+                    <h3> Restoran-Management-System</h3>
+                    <p>Modern restaurant website with menu, online reservation and contact system</p>
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                         <span class="tag">Spring Security</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <a href="https://github.com/revandev11/Restoran-Management-System" target="_blank" class="card-btn">View on GitHub →</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tick Flow</h3>
+                    <p>Task management application with add, edit, delete and local storage features
+                        also deployed on Docker and connected to MySQL database for persistent storage
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                    <a href="https://github.com/revandev11/Tick-Flow" target="_blank" class="card-btn">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message..." rows="6" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <h3>Find me on</h3>
+                <div class="social-icons">
+                    <a href="mailto:abusovrvan34@gmail.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/revanabusov/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/revanabusov/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/revandev11" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
