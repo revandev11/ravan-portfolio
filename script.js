@@ -149,6 +149,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
+    // Enter göndərir, Shift+Enter yeni sətrə keçir
+    const messageInput = contactForm.querySelector('textarea[name="message"]');
+    if (messageInput) {
+        messageInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                contactForm.requestSubmit();
+            }
+        });
+    }
+
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
