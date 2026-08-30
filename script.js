@@ -154,16 +154,22 @@ if (contactForm) {
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Sending';
         submitBtn.disabled = true;
 
-        emailjs.sendForm('service_cwyvgoo', 'template_wvze4ab', contactForm)
+        const SERVICE_ID = 'service_cwyvgoo';
+        const NOTIFY_TEMPLATE_ID = 'template_zygc7kl';   // notifies Revan
+        const AUTOREPLY_TEMPLATE_ID = 'template_wvze4ab'; // auto-reply to the sender
+
+        // 1) Notify Revan, then 2) send an automatic reply to the person who submitted the form
+        emailjs.sendForm(SERVICE_ID, NOTIFY_TEMPLATE_ID, contactForm)
+            .then(() => emailjs.sendForm(SERVICE_ID, AUTOREPLY_TEMPLATE_ID, contactForm))
             .then(() => {
-                alert('your message has been sent');
+                alert('Your message has been sent! I will get back to you soon.');
                 contactForm.reset();
             })
             .catch((error) => {
-                alert('something went wrong,please try again');
+                alert('Something went wrong, please try again.');
                 console.error('EmailJS error:', error);
             })
             .finally(() => {
