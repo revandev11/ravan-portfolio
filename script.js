@@ -123,7 +123,10 @@ class MultiStepForm {
 
 // Initialize form when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new MultiStepForm();
+    const multiStepFormEl = document.querySelector('.multi-step-form');
+    if (multiStepFormEl) {
+        new MultiStepForm();
+    }
 });
 
 // ========== SMOOTH SCROLLING FOR NAVIGATION ==========
@@ -140,3 +143,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ========== CONTACT FORM — EMAILJS ==========
+
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        emailjs.sendForm('service_cwyvgoo', 'template_wvze4ab', contactForm)
+            .then(() => {
+                alert('your message has been sent');
+                contactForm.reset();
+            })
+            .catch((error) => {
+                alert('something went wrong,please try again');
+                console.error('EmailJS error:', error);
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    });
+}
